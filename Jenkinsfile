@@ -23,11 +23,11 @@ stage('Run Tests') {
     steps {
         sh '''
         . venv/bin/activate
+        export PYTHONPATH=$PWD
         pytest -q
         '''
     }
 }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t ecommerce-flask .'
