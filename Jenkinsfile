@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git "https://github.com/tejalkunde/ecommerce-devops-project.git"
+                git branch: 'main', url: 'https://github.com/tejalkunde/ecommerce-devops-project.git'
             }
         }
 
