@@ -25,8 +25,8 @@ jobs:
           pip install -r requirements.txt
           pip list
 
-      - name: Check pytest
-        run: pytest --version
+      - name: Verify pytest
+        run: python -m pytest --version
 
       - name: Run tests
-        run: python -m pytest --cov=demo_ecommerce
+        run: python -m pytest --cov=demo_ecommerce -v
