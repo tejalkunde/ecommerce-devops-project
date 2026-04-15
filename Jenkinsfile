@@ -22,9 +22,9 @@ pipeline {
 stage('Run Tests') {
     steps {
         sh '''
-        . venv/bin/activate
-        export PYTHONPATH=$PWD
-        pytest -q
+            . venv/bin/activate
+            export PYTHONPATH=$PWD
+            pytest --junitxml=report.xml
         '''
     }
 }
@@ -43,5 +43,10 @@ stage('Run Tests') {
                 '''
             }
         }
+    }
+}
+post {
+    always {
+        junit 'report.xml'
     }
 }
