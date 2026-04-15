@@ -23,7 +23,7 @@ jobs:
 
       - name: Lint code
         run: |
-          flake8 . --max-line-length=120 --extend-ignore=E302,E501
+          flake8 . --exclude=venv,__pycache__,.git
 
       - name: Run tests
         run: |
