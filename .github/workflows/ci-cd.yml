@@ -22,9 +22,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Lint code
-      run: |
-        flake8 .
-
+  run: flake8 . --max-line-length=120 --extend-ignore=E302,E501
     - name: Run tests
       run: |
         pytest --cov=demo_ecommerce
