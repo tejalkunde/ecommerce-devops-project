@@ -4,3 +4,4 @@ mccabe==0.7.0
 pycodestyle==2.14.0
 pyflakes==3.4.0
 pytest==8.3.2
+Flask==3.0.3
