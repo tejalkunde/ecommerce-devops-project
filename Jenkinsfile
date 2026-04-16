@@ -31,11 +31,12 @@ pipeline {
         }
 
         stage('Deploy using Docker Compose') {
-    steps {
-        sh 'docker compose down || true'
-        sh 'docker compose up -d --build'
+            steps {
+                sh 'docker compose down || true'
+                sh 'docker compose up -d --build'
+            }
+        }
     }
-}
 
     post {
         always {
